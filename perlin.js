@@ -1,20 +1,15 @@
 let particles = [];
-const num = 10000;
-
+const num = 1000;
 const noiseScale = 0.005 / 2;
 
 function setup() {
   let bg = createDiv();
   bg.addClass("p5canvas");
-  let canvas = createCanvas(2440, 1370);
-  canvas.parent(bg);
+  createCanvas(windowWidth, windowHeight).parent(bg);
   for (let i = 0; i < num; i++) {
     particles.push(createVector(0, 0));
   }
   stroke(155, 50);
-  // For a cool effect try uncommenting this line
-  // And comment out the background() line in draw
-  // stroke(255, 50);
   clear();
 }
 
@@ -43,5 +38,9 @@ function mouseReleased() {
 }
 
 function onScreen(v) {
-  return v.x >= 0 && v.x <= width && v.y >= 0 && v.y <= height;
+  return v.x >= 0 && v.x <= windowWidth && v.y >= 0 && v.y <= windowHeight;
+}
+
+function windowResized() {
+  resizeCanvas(windowWidth, windowHeight);
 }

@@ -1,6 +1,5 @@
 function parallax(e) {
   $(".data-layer").css({ top: 270 - 0.1 * e });
-}
 
 function pageInfo() {
   $(".data-layer").length > 0
