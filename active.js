@@ -5,21 +5,27 @@ function updateActiveLink() {
 
   const aboutSection = document.querySelector("#about").offsetTop;
   const experienceSection = document.querySelector("#experience").offsetTop;
-  const projectsSection = document.querySelector("#projects").offsetTop - 10;
+  const projectsSection = document.querySelector("#projects").offsetTop;
+  const opensourceSection = document.querySelector("#opensource").offsetTop;
+  const awardsSection = document.querySelector("#awards").offsetTop;
 
-  if (scrollPosition >= aboutSection && scrollPosition < experienceSection) {
-    navLinks.forEach((link) => link.classList.remove("active"));
-    navLinks[0].classList.add("active");
-  } else if (
-    scrollPosition >= experienceSection &&
-    scrollPosition < projectsSection
-  ) {
-    navLinks.forEach((link) => link.classList.remove("active"));
-    navLinks[1].classList.add("active");
-  } else if (scrollPosition >= projectsSection) {
-    navLinks.forEach((link) => link.classList.remove("active"));
-    navLinks[2].classList.add("active");
-  }
+  const sectionOffsets = [
+    aboutSection,
+    experienceSection,
+    projectsSection,
+    opensourceSection,
+    awardsSection,
+  ];
+
+  sectionOffsets.forEach((offset, index) => {
+    if (
+      scrollPosition >= offset - 100 &&
+      scrollPosition < sectionOffsets[index + 1]
+    ) {
+      navLinks.forEach((link) => link.classList.remove("active"));
+      navLinks[index].classList.add("active");
+    }
+  });
 }
 
 window.addEventListener("scroll", updateActiveLink);

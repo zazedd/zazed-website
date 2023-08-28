@@ -1,5 +1,5 @@
 let particles = [];
-const num = 1000;
+const num = 2000;
 const noiseScale = 0.005 / 2;
 
 function setup() {
@@ -9,12 +9,12 @@ function setup() {
   for (let i = 0; i < num; i++) {
     particles.push(createVector(0, 0));
   }
-  stroke(155, 50);
+  stroke(185, 40);
   clear();
 }
 
 function draw() {
-  background(0, 20);
+  background(0, 10);
   for (let i = 0; i < num; i++) {
     let p = particles[i];
     point(p.x, p.y);

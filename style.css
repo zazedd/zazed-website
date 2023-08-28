@@ -1657,13 +1657,6 @@ video {
   z-index: -2;
 }
 
-.data-layer {
-  margin: var(--text-pad);
-  color: rgba(255, 255, 255, 0.1);
-  font-size: 28px;
-  line-height: 40px;
-  position: fixed;
-  top: 35%;
-  left: 20px;
-  z-index: -1;
+.project-label {
+  margin-top: 15px;
 }
