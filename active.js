@@ -1,31 +1,35 @@
 const navLinks = document.querySelectorAll(".navig");
 
 function updateActiveLink() {
+  const height = window.innerHeight;
   const scrollPosition = window.scrollY;
 
-  const aboutSection = document.querySelector("#about").offsetTop;
-  const experienceSection = document.querySelector("#experience").offsetTop;
-  const projectsSection = document.querySelector("#projects").offsetTop;
-  const opensourceSection = document.querySelector("#opensource").offsetTop;
-  const awardsSection = document.querySelector("#awards").offsetTop;
-
   const sectionOffsets = [
-    aboutSection,
-    experienceSection,
-    projectsSection,
-    opensourceSection,
-    awardsSection,
+    document.querySelector("#about").offsetTop,
+    document.querySelector("#experience").offsetTop - 100,
+    document.querySelector("#projects").offsetTop - 300,
+    document.querySelector("#opensource").offsetTop - 900,
+    document.querySelector("#awards").offsetTop,
   ];
 
-  sectionOffsets.forEach((offset, index) => {
+  let activeIndex = 0;
+
+  for (let i = sectionOffsets.length - 1; i >= 0; i--) {
     if (
-      scrollPosition >= offset - 100 &&
-      scrollPosition < sectionOffsets[index + 1]
+      window.innerHeight + Math.round(window.scrollY) >=
+      document.body.offsetHeight
     ) {
-      navLinks.forEach((link) => link.classList.remove("active"));
-      navLinks[index].classList.add("active");
+      activeIndex = 4;
+      break;
     }
-  });
+    if (scrollPosition >= sectionOffsets[i]) {
+      activeIndex = i;
+      break;
+    }
+  }
+
+  navLinks.forEach((link) => link.classList.remove("active"));
+  navLinks[activeIndex].classList.add("active");
 }
 
 window.addEventListener("scroll", updateActiveLink);
