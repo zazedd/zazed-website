@@ -2,10 +2,8 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://leoms.dev/</loc>
-    <lastmod>2024-08-21</lastmod>
   </url>
   <url>
-    <loc>https://leoms.dev/resume.pdf</loc>
-    <lastmod>2024-08-21</lastmod>
+    <loc>https://leoms.dev/photos/</loc>
   </url>
 </urlset>
