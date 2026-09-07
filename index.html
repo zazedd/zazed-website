@@ -11,14 +11,32 @@
     <main>
       <div class="portfolio-row">
         <div class="portfolio-frame">
-          <img src="portfolio.jpg" width="3000" height="4000" alt="An open notebook displaying my handwritten portfolio." />
-          <article class="portfolio-links" aria-label="Portfolio transcript">
-            <h1>Leonardo Santos</h1>
-            <p>I give a shit. Type-safe and sleep-sound | OCaml and Nix make me happy :)</p>
-            <section aria-label="Work"><h2>Work</h2><a class="hit work-one" href="https://ahrefs.com/" target="_blank" rel="noreferrer">Ahrefs, lead developer for API and MCP (2025-now)</a><a class="hit work-two" href="https://radiocarbon.ci.dev" target="_blank" rel="noreferrer">Tarides: Internship (2024)</a></section>
-            <section aria-label="Projects"><h2>Projects</h2><a class="hit project-one" href="https://github.com/ahrefs/ppx_mikmatch" target="_blank" rel="noreferrer">ppx_milkmatch</a><a class="hit project-two" href="https://github.com/zazedd/haskelite-coq" target="_blank" rel="noreferrer">haskelite-coq</a></section>
-            <section aria-label="Contact"><h2>Contact</h2><a class="hit contact" href="mailto:leomendesantos@gmail.com">leomendesantos@gmail.com</a><a class="hit github" href="https://github.com/zazedd" target="_blank" rel="noreferrer">GitHub: zazedd</a></section>
-          </article>
+          <img src="portfolio.jpg" width="3000" height="4000" alt="An open notebook displaying Leonardo Santos's handwritten portfolio." />
+          <!-- The paths follow the baselines of the handwriting. The foreignObjects are the accessible click targets. -->
+          <svg class="portfolio-overlay" viewBox="0 0 3000 4000" aria-label="Portfolio links" role="group">
+            <defs>
+              <path id="ahrefs-path" d="M 480 1510 C 1080 1490, 1700 1510, 2700 1525" />
+              <path id="tarides-path" d="M 480 1705 C 1020 1690, 1510 1710, 2580 1715" />
+              <path id="milkmatch-path" d="M 480 2100 C 1110 2090, 1800 2110, 2600 2120" />
+              <path id="haskelite-path" d="M 480 2290 C 1150 2280, 1900 2310, 2540 2330" />
+              <path id="email-path" d="M 480 2790 C 1080 2780, 1590 2800, 2200 2810" />
+              <path id="github-path" d="M 480 2990 C 960 2980, 1450 3000, 1780 3005" />
+            </defs>
+            <g class="portfolio-transcript" aria-hidden="true">
+              <text><textPath href="#ahrefs-path">Ahrefs, lead developer for API and MCP</textPath></text>
+              <text><textPath href="#tarides-path">Tarides, internship</textPath></text>
+              <text><textPath href="#milkmatch-path">ppx-milkmatch</textPath></text>
+              <text><textPath href="#haskelite-path">haskelite-cog</textPath></text>
+              <text><textPath href="#email-path">leomendesantos@gmail.com</textPath></text>
+              <text><textPath href="#github-path">GitHub: zazedd</textPath></text>
+            </g>
+            <foreignObject x="470" y="1430" width="2150" height="145"><a xmlns="http://www.w3.org/1999/xhtml" class="portfolio-hit ahrefs-hit" href="https://github.com/zazedd" target="_blank" rel="noreferrer" aria-label="Ahrefs, lead developer for API and MCP"></a></foreignObject>
+            <foreignObject x="470" y="1640" width="2150" height="135"><a xmlns="http://www.w3.org/1999/xhtml" class="portfolio-hit" href="https://radiocarbon.ci.dev" target="_blank" rel="noreferrer" aria-label="Tarides internship"></a></foreignObject>
+            <foreignObject x="470" y="2045" width="1850" height="115"><a xmlns="http://www.w3.org/1999/xhtml" class="portfolio-hit" href="https://github.com/zazedd" target="_blank" rel="noreferrer" aria-label="ppx-milkmatch"></a></foreignObject>
+            <foreignObject x="470" y="2225" width="1850" height="215"><a xmlns="http://www.w3.org/1999/xhtml" class="portfolio-hit" href="https://github.com/zazedd" target="_blank" rel="noreferrer" aria-label="haskelite-cog"></a></foreignObject>
+            <foreignObject x="470" y="2735" width="1300" height="115"><a xmlns="http://www.w3.org/1999/xhtml" class="portfolio-hit" href="mailto:leomendesantos@gmail.com" aria-label="Email Leonardo"></a></foreignObject>
+            <foreignObject x="470" y="2935" width="1300" height="115"><a xmlns="http://www.w3.org/1999/xhtml" class="portfolio-hit" href="https://github.com/zazedd" target="_blank" rel="noreferrer" aria-label="GitHub: zazedd"></a></foreignObject>
+          </svg>
         </div>
         <p class="photo-link"><a href="photos/">photography</a></p>
       </div>

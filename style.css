@@ -8,17 +8,8 @@ main { min-height: 100svh; display: grid; place-items: center; padding: 32px; }
 .portfolio-row { display: flex; align-items: center; gap: 32px; }
 .portfolio-frame { position: relative; width: min(75svh, 960px); aspect-ratio: 3 / 4; overflow: hidden; }
 .portfolio-frame > img { display: block; width: 100%; height: 100%; object-fit: cover; }
-/* These transparent links sit over the words in the portfolio image. Adjust their positions when you replace the placeholder image. */
-.portfolio-links { position: absolute; inset: 0; color: transparent; user-select: none; }
-.portfolio-links h1, .portfolio-links h2, .portfolio-links p { position: absolute; margin: 0; color: transparent; }
-.hit { position: absolute; display: block; color: transparent; outline-offset: 3px; }
-.hit:focus-visible { outline: 2px solid #4b82ff; background: rgba(75,130,255,.22); }
-.work-one { left: 17%; top: 35%; width: 75%; height: 6%; }
-.work-two { left: 17%; top: 41%; width: 68%; height: 5%; }
-.project-one { left: 17%; top: 50%; width: 75%; height: 5%; }
-.project-two { left: 17%; top: 55%; width: 75%; height: 7%; }
-.contact { left: 17%; top: 67%; width: 62%; height: 5%; }
-.github { left: 17%; top: 72%; width: 42%; height: 5%; }
+/* SVG paths follow the handwritten baselines; foreignObjects provide the links. */
+.portfolio-overlay { position:absolute; inset:0; width:100%; height:100%; overflow:visible; }.portfolio-overlay foreignObject { overflow:visible; }.portfolio-transcript { fill:transparent; font:70px cursive; pointer-events:none; }.portfolio-hit { display:block; width:100%; height:100%; border:0; border-radius:18px; cursor:pointer; outline-offset:4px; background:rgba(104,142,172,.08); transition:background .16s ease,box-shadow .16s ease; }.portfolio-hit:hover { background:rgba(104,142,172,.28); box-shadow:inset 0 0 0 2px rgba(54,82,103,.3); }.portfolio-hit.ahrefs-hit { border-radius:18px 30px 30px 18px; transform:rotate(1.1deg); transform-origin:left center; }.portfolio-hit:focus-visible { outline:3px solid #4b82ff; background:rgba(75,130,255,.25); }
 .photo-link { margin: 0; font-size: 18px; }
 .photo-link a { text-underline-offset: 4px; }
 .photo-link a:hover { color: #bbb; }
